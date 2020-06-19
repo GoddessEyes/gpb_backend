@@ -3,6 +3,8 @@ import os
 
 AUTH_USER_MODEL = 'eauth.User'
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',

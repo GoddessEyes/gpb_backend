@@ -48,6 +48,7 @@ class ThemeSerializer(serializers.ModelSerializer):
 
 class IdeaOfferSerializer(serializers.ModelSerializer):
     like_count = serializers.SerializerMethodField()
+    comment_count = serializers.SerializerMethodField()
 
     idealike_set = IdeaLikeSerializer(
         many=True,
@@ -65,6 +66,9 @@ class IdeaOfferSerializer(serializers.ModelSerializer):
 
     def get_like_count(self, instance):
         return instance.idealike_set.count()
+
+    def get_comment_count(self, instance):
+        return instance.ideacomment_set.count()
 
     def create(self, validated_data):
         idea_offer = IdeaOffer.objects.create(
