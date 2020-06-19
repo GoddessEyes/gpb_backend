@@ -12,7 +12,7 @@ nplusone = "*"
 mypy = "*"
 
 [packages]
-django = "==3.0.6"
+django = "==3.0.7"
 django-cors-headers = "==3.2.1"
 psycopg2-binary = "==2.8.5"
 uwsgi = "==2.0.18"
