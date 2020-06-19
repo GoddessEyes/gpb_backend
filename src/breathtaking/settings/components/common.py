@@ -1,6 +1,8 @@
 import os
 
 
+AUTH_USER_MODEL = 'eauth.User'
+
 DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -19,10 +21,12 @@ THIRD_PARTY_APPS = (
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+    'mptt',
 )
 
 LOCAL_APPS = (
-
+    'breathtaking.modules.eauth',
+    'breathtaking.modules.department_tree',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
