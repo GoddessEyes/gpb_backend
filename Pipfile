@@ -12,12 +12,14 @@ nplusone = "*"
 mypy = "*"
 
 [packages]
-django = "==3.0.6"
+django = "*"
 django-cors-headers = "==3.2.1"
 psycopg2-binary = "==2.8.5"
 uwsgi = "==2.0.18"
 drf-yasg = "==1.17.0"
 django-filter = "==2.2.0"
+django-rest-auth = "*"
+django-allauth = "*"
 
 [requires]
 python_version = "3.8"

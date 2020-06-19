@@ -2,6 +2,7 @@ import os
 
 from breathtaking.settings.components.common import *
 from breathtaking.settings.components.db import *
+from breathtaking.settings.components.openapi import *
 
 BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__)),
@@ -12,6 +13,8 @@ _ENV_VAR = 'VAR_PATH'
 VAR_PATH = os.getenv(_ENV_VAR, os.path.join(SRC_DIR, 'var'))
 
 DEBUG = True
+
+SITE_ID = 1
 
 MIDDLEWARE = (
     'django.middleware.security.SecurityMiddleware',
