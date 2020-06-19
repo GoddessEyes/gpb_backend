@@ -4,6 +4,7 @@ from breathtaking.settings.components.common import *
 from breathtaking.settings.components.db import *
 from breathtaking.settings.components.openapi import *
 
+
 BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__)),
 )

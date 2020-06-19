@@ -27,6 +27,7 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'breathtaking.modules.eauth',
     'breathtaking.modules.department_tree',
+    'breathtaking.modules.ideas',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

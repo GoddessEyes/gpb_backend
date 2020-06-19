@@ -19,13 +19,11 @@ class DepartmentTree(MPTTModel):
     users = models.ManyToManyField(
         to='eauth.User',
         verbose_name='Сотрудники',
-        null=True,
         related_name='department_users'
     )
     department_heads = models.ManyToManyField(
         to='eauth.User',
         verbose_name='Главы отдела',
-        null=True,
         related_name='department_heads',
     )
 
