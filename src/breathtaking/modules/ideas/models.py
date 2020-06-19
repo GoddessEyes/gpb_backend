@@ -1,22 +1,38 @@
 from django.conf import settings
 from django.db import models
 
+from breathtaking.api.common.models import TimeStampedModel
 
-class Theme(models.Model):
+
+class Theme(TimeStampedModel):
     name = models.CharField(
         verbose_name='Тема',
         max_length=255,
     )
 
+    class Meta:
+        verbose_name = 'Тема'
+        verbose_name_plural = 'Темы'
 
-class Tag(models.Model):
+    def __str__(self):
+        return self.name
+
+
+class Tag(TimeStampedModel):
     name = models.CharField(
         verbose_name='Тэг',
         max_length=255,
     )
 
+    class Meta:
+        verbose_name = 'Тэг'
+        verbose_name_plural = 'Тэги'
 
-class IdeaOffer(models.Model):
+    def __str__(self):
+        return self.name
+
+
+class IdeaOffer(TimeStampedModel):
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name='Инициатор идеи',
@@ -47,6 +63,7 @@ class IdeaOffer(models.Model):
             (0, 'Опубликовано'),
             (1, 'Модерация'),
             (2, 'Не прошло модерацию'),
+            (3, 'Решено/закрыто'),
         ),
         default=1,
     )
@@ -56,10 +73,10 @@ class IdeaOffer(models.Model):
         verbose_name_plural = 'Идеи'
 
     def __str__(self):
-        return f'{self.theme} {self.user}'
+        return f'{self.theme} {self.user} {self.status}'
 
 
-class IdeaLike(models.Model):
+class IdeaLike(TimeStampedModel):
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name='Лайкнувший',
@@ -79,7 +96,7 @@ class IdeaLike(models.Model):
         return f'{self.user} {self.idea}'
 
 
-class IdeaComment(models.Model):
+class IdeaComment(TimeStampedModel):
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name='Коментатор',

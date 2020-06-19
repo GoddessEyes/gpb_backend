@@ -1,3 +1,5 @@
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
@@ -13,13 +15,40 @@ from breathtaking.modules.ideas.models import IdeaComment, IdeaLike, IdeaOffer, 
 
 
 class IdeaOfferViewSet(ModelViewSet):
-    """Идеи."""
+    """Идеи.
+    Поисковые поля: Тема и описание.
+    Поля фильтраци: id-пользователя, id-тегов, id-тем, статусы =
+        (0, 'Опубликовано')
+        (1, 'Модерация')
+        (2, 'Не прошло модерацию')
+        (3, 'Решено/закрыто')
+    Сортировка по: created/modified
+    """
 
     serializer_class = IdeaOfferSerializer
-    queryset = IdeaOffer.objects.filter(
-        status=0,
-    )
+    queryset = IdeaOffer.objects.all()
     permission_classes = (IsAuthenticated, )
+    filter_backends = (
+        SearchFilter,
+        DjangoFilterBackend,
+        OrderingFilter,
+    )
+
+    search_fields = (
+        'theme',
+        'description',
+    )
+    filter_fields = (
+        'user',
+        'tags',
+        'themes',
+        'status',
+    )
+
+    ordering_fields = (
+        'created',
+        'modified',
+    )
 
 
 class ThemeViewSet(ListOnlyModelViewSet):

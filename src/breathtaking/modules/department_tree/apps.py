@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class DepartmentTreeConfig(AppConfig):
-    name = 'department_tree'
+    name = 'breathtaking.modules.department_tree'
+    verbose_name = 'Отделы'

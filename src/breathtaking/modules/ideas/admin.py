@@ -27,6 +27,10 @@ class IdeaOfferAdmin(admin.ModelAdmin):
         'user',
         'status',
     )
+    readonly_fields = (
+        'created',
+        'modified',
+    )
 
 
 @admin.register(Tag)
