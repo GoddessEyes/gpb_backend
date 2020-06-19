@@ -1,0 +1,13 @@
+/docs
+/var
+/etc
+
+.*
+!src/.isort.cfg
+!.pylintrc
+
+settings_local.py
+
+docker-compose.*
+README.md
+*.sqlite3

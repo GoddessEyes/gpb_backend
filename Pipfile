@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+flake8 = "*"
+isort = "*"
+pylint-django = "*"
+nplusone = "*"
+mypy = "*"
+
+[packages]
+django = "==3.0.6"
+django-cors-headers = "==3.2.1"
+psycopg2-binary = "==2.8.5"
+uwsgi = "==2.0.18"
+drf-yasg = "==1.17.0"
+django-filter = "==2.2.0"
+
+[requires]
+python_version = "3.8"

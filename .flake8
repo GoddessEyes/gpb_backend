@@ -1,0 +1,34 @@
+[flake8]
+exclude =
+				*/docs/*,
+				*/.tox/*,
+				*/.venv/*,
+				migrations,
+				__init__.py,
+				manage.py,
+				*/settings/*,
+
+max-line-length = 120
+accept-encodings = utf-8
+import-order-style = pep8
+
+ignore = \
+	C101, # Coding magic comment not found
+	D104, \             # Докстринги в публичных пакетах (__init__.py)
+	D106, \             # Докстринги в публичных вложенных классах (например, Meta)
+	D107, \             # Докстриги в __init__
+	W504, \             # line break after binary operator
+
+
+per-file-ignores =
+    tests*.py,manage.py,wsgi.py:
+        # D101 Missing docstring in public class
+        D100,
+        # D101 Missing docstring in public class
+        D101,
+        # D102 Missing docstring in public method
+        D102,
+        # WPS213 Found too many expressions
+        WPS213,
+        # WPS230 Found too many public instance attributes
+        WPS230
