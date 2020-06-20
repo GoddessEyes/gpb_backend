@@ -1,3 +1,5 @@
+![CI](https://github.com/GoddessEyes/gpb_backend/workflows/CI/badge.svg)
+
 # You are breathtaking !!!
 
 ## Вы великолепны !!!
