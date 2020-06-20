@@ -89,7 +89,7 @@ class IdeaOfferSerializer(serializers.ModelSerializer):
             user=self.context['request'].user,
             theme=validated_data['theme'],
             description=validated_data['description'],
+            themes=validated_data['themes'],
         )
         idea_offer.tags.set(validated_data['tags'])
-        idea_offer.themes.set(validated_data['themes'])
         return idea_offer
