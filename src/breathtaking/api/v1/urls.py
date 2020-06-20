@@ -9,6 +9,7 @@ from rest_framework import permissions
 
 from breathtaking.api.v1.ideas.urls import router as ideas_router
 from breathtaking.api.v1.solutions.urls import router as solutions_router
+from breathtaking.api.v1.stats.urls import router as stats_router
 
 
 schema_view = get_schema_view(
@@ -23,6 +24,7 @@ schema_view = get_schema_view(
 urlpatterns: Tuple[URLResolver, ...] = (
     path('ideas/', include(ideas_router.urls)),
     path('solution/', include(solutions_router.urls)),
+    path('statistic/', include(stats_router.urls)),
     path('auth/', include('breathtaking.api.v1.auth.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
