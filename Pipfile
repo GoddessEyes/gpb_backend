@@ -22,6 +22,7 @@ django-rest-auth = "*"
 django-allauth = "*"
 django-mptt = "*"
 faker = "*"
+django-ckeditor = "*"
 
 [requires]
 python_version = "3.8"

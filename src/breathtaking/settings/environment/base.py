@@ -83,6 +83,8 @@ STATIC_ROOT = os.path.join(VAR_PATH, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(VAR_PATH, 'media')
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
 for path in (VAR_PATH, MEDIA_ROOT):
     if not os.path.exists(path):
         os.mkdir(path)

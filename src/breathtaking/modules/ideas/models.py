@@ -63,7 +63,7 @@ class IdeaOffer(TimeStampedModel):
     )
     themes = models.ForeignKey(
         to=Theme,
-        verbose_name='Темы',
+        verbose_name='Выбранная тема',
         on_delete=models.CASCADE,
         null=True,
     )
