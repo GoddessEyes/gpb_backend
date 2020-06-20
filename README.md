@@ -3,10 +3,15 @@
 
 # You are breathtaking !!!
 
-## Вы великолепны !!!
-
 ![You are breathtaking](https://memepedia.ru/wp-content/uploads/2019/06/keanu-meme.jpg)
 
+```text
+Репозитории: 
+
+  Frontend: https://github.com/Hvoya/gpb-frontend
+  Mobile: https://github.com/bigman212/DigitalHackaton_2
+  Design: https://xd.adobe.com/view/59ebe566-5d60-4d4b-4245-8f1300911a0c-2fda/
+```
 
 ```text
 Сервис является базовой реализацией системы публикации идей.
@@ -15,7 +20,11 @@
   2. Публикация идей.
   3. Модерация сервиса.
   4. Голосование за идеи.
-  5. Комментирование идей. 
+  5. Комментирование идей.
+  6. Предложение бизнес решения.
+      6.1. Бизнес решения для идеи.
+      6.2. Бизнес решения одиночно.
+  7. Статистика пользователя.
 ```
 
 #### Django:
