@@ -1,6 +1,18 @@
 from rest_framework import serializers
 
+from breathtaking.api.v1.auth.serializers import UserSerializer
 from breathtaking.modules.solutions.models import Solution
+
+
+class SolutionSerializer(serializers.ModelSerializer):
+    user = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = Solution
+        fields = '__all__'
+
+    def get_user(self, instance):
+        return UserSerializer(instance.user).data
 
 
 class SolutionWithoutIdeaSerializer(serializers.ModelSerializer):

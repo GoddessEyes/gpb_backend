@@ -2,6 +2,8 @@
 
 from rest_framework import serializers
 
+from breathtaking.api.v1.auth.serializers import UserSerializer
+from breathtaking.api.v1.solutions.serializers import SolutionSerializer
 from breathtaking.modules.ideas.models import IdeaComment, IdeaLike, IdeaOffer, Tag, Theme
 
 
@@ -54,27 +56,37 @@ class ThemeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Theme
         fields = '__all__'
+        read_only_fields = (
+            'id',
+            'name',
+        )
 
 
 class IdeaOfferSerializer(serializers.ModelSerializer):
     """Сериалайзер `идей`."""
-
+    user = serializers.SerializerMethodField(read_only=True)
     like_count = serializers.SerializerMethodField()
     comment_count = serializers.SerializerMethodField()
-
     idealike_set = IdeaLikeSerializer(
         many=True,
         read_only=True,
-        help_text='Массив лай'
+        help_text='Массив лайков'
     )
+    themes_info = serializers.SerializerMethodField(read_only=True)
+    tags_info = serializers.SerializerMethodField(read_only=True)
     ideacomment_set = IdeaLikeSerializer(many=True, read_only=True)
     status = serializers.IntegerField(read_only=True)
+    solution_set = SolutionSerializer(read_only=True, many=True)
 
     class Meta:
         model = IdeaOffer
-        exclude = (
-            'user',
-        )
+        fields = '__all__'
+
+    def get_themes_info(self, instance):
+        return ThemeSerializer(instance.themes).data
+
+    def get_tags_info(self, instance):
+        return TagSerializer(instance.tags, many=True).data
 
     def get_like_count(self, instance):
         """Вернёт в сериалзиацию кол-во лайков идеи."""
@@ -83,6 +95,9 @@ class IdeaOfferSerializer(serializers.ModelSerializer):
     def get_comment_count(self, instance):
         """Вернёт в сериалзиацию кол-во комментов идеи."""
         return instance.ideacomment_set.count()
+
+    def get_user(self, instance):
+        return UserSerializer(instance.user).data
 
     def create(self, validated_data):
         idea_offer = IdeaOffer.objects.create(
