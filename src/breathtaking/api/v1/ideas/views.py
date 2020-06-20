@@ -1,3 +1,5 @@
+"""Модуль view`s для эндпоинтов `ideas`."""
+
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.permissions import IsAuthenticated
@@ -52,7 +54,7 @@ class IdeaOfferViewSet(ModelViewSet):
 
 
 class ThemeViewSet(ListOnlyModelViewSet):
-    """Темы."""
+    """"Эндпоинт `Темы`."""
 
     serializer_class = ThemeSerializer
     queryset = Theme.objects.all()
@@ -60,7 +62,7 @@ class ThemeViewSet(ListOnlyModelViewSet):
 
 
 class TagViewSet(ListOnlyModelViewSet):
-    """Тэги."""
+    """Эндпоинт `Тэги`."""
 
     serializer_class = TagSerializer
     queryset = Tag.objects.all()
@@ -68,7 +70,7 @@ class TagViewSet(ListOnlyModelViewSet):
 
 
 class LikeIdeaViewSet(CreateDestroyViewSet):
-    """Лайк к идее."""
+    """Эндпоинт `Лайк к идее`."""
 
     serializer_class = IdeaLikeSerializer
     queryset = IdeaLike.objects.all()
@@ -76,7 +78,7 @@ class LikeIdeaViewSet(CreateDestroyViewSet):
 
 
 class IdeaCommentViewSet(CreateDestroyViewSet):
-    """Коммент к идее."""
+    """Эндпоинт `Коммент к идее`."""
 
     serializer_class = IdeaCommentSerializer
     queryset = IdeaComment.objects.all()

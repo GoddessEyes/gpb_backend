@@ -1,3 +1,5 @@
+"""Баззовые модели для наследования."""
+
 from django.db import models
 
 

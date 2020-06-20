@@ -1,3 +1,7 @@
+"""Базовые настройки. Импортируются и в `dev` и `prod` среды.
+Включают в себя основные модули для работы приложения.
+"""
+
 import os
 
 from breathtaking.settings.components.common import *

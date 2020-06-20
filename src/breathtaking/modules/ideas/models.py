@@ -1,3 +1,5 @@
+"""Модуль моделей `ideas` и её свзей."""
+
 from django.conf import settings
 from django.db import models
 
@@ -5,6 +7,8 @@ from breathtaking.api.common.models import TimeStampedModel
 
 
 class Theme(TimeStampedModel):
+    """Тема связана идеей M2M."""
+
     name = models.CharField(
         verbose_name='Тема',
         max_length=255,
@@ -19,6 +23,8 @@ class Theme(TimeStampedModel):
 
 
 class Tag(TimeStampedModel):
+    """Тэг связана идеей M2M."""
+
     name = models.CharField(
         verbose_name='Тэг',
         max_length=255,
@@ -33,6 +39,8 @@ class Tag(TimeStampedModel):
 
 
 class IdeaOffer(TimeStampedModel):
+    """Заявка на идею. Создаётся в статусе проверки, публикую после модерации."""
+
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name='Инициатор идеи',
@@ -77,6 +85,8 @@ class IdeaOffer(TimeStampedModel):
 
 
 class IdeaLike(TimeStampedModel):
+    """Модель лайков к идее."""
+
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name='Лайкнувший',
@@ -97,6 +107,8 @@ class IdeaLike(TimeStampedModel):
 
 
 class IdeaComment(TimeStampedModel):
+    """Модель комментов к идее."""
+
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name='Коментатор',

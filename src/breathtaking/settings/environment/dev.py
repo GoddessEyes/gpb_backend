@@ -1,3 +1,5 @@
+"""Окружение для разработки."""
+
 from corsheaders.defaults import default_headers, default_methods
 
 from breathtaking.settings.environment.base import *

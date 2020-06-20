@@ -1,3 +1,5 @@
+"""Модуль роутинга эндопинтов `ideas`."""
+
 from rest_framework import routers
 
 from breathtaking.api.v1.ideas.views import (

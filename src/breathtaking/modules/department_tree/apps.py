@@ -1,3 +1,5 @@
+"""Модуль django-app."""
+
 from django.apps import AppConfig
 
 

@@ -1,3 +1,5 @@
+"""Роутинг `Аунтентификации`."""
+
 from typing import Tuple
 
 from django.urls import URLResolver, include, path

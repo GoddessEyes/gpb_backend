@@ -1,4 +1,4 @@
-"""Модуль конфигурации RestFramework и Swagger."""
+"""Модуль конфигурации RestFramework/Swagger/OAS."""
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (

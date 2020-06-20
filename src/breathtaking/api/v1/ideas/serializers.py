@@ -1,9 +1,13 @@
+"""Модуль сериализации объектов `Идей` и их связей."""
+
 from rest_framework import serializers
 
 from breathtaking.modules.ideas.models import IdeaComment, IdeaLike, IdeaOffer, Tag, Theme
 
 
 class IdeaCommentSerializer(serializers.ModelSerializer):
+    """Сериалайзер комментариев к идеи."""
+
     class Meta:
         model = IdeaComment
         exclude = (
@@ -20,6 +24,8 @@ class IdeaCommentSerializer(serializers.ModelSerializer):
 
 
 class IdeaLikeSerializer(serializers.ModelSerializer):
+    """Сериалайзер лайков к идеи."""
+
     class Meta:
         model = IdeaLike
         exclude = (
@@ -35,18 +41,24 @@ class IdeaLikeSerializer(serializers.ModelSerializer):
 
 
 class TagSerializer(serializers.ModelSerializer):
+    """Сериалайзер тэгов идеи."""
+
     class Meta:
         model = Tag
         fields = '__all__'
 
 
 class ThemeSerializer(serializers.ModelSerializer):
+    """Сериалайзер тем идей."""
+
     class Meta:
         model = Theme
         fields = '__all__'
 
 
 class IdeaOfferSerializer(serializers.ModelSerializer):
+    """Сериалайзер `идей`."""
+
     like_count = serializers.SerializerMethodField()
     comment_count = serializers.SerializerMethodField()
 
@@ -65,9 +77,11 @@ class IdeaOfferSerializer(serializers.ModelSerializer):
         )
 
     def get_like_count(self, instance):
+        """Вернёт в сериалзиацию кол-во лайков идеи."""
         return instance.idealike_set.count()
 
     def get_comment_count(self, instance):
+        """Вернёт в сериалзиацию кол-во комментов идеи."""
         return instance.ideacomment_set.count()
 
     def create(self, validated_data):

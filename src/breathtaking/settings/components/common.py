@@ -1,3 +1,5 @@
+"""Общие настройки django-app."""
+
 import os
 
 

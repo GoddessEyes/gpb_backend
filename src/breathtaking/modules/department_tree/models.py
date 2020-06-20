@@ -4,6 +4,8 @@ from mptt.models import MPTTModel
 
 
 class DepartmentTree(MPTTModel):
+    """MPTT модель департаментов (отделов)."""
+
     name = models.CharField(
         verbose_name='Название отдела',
         max_length=255,

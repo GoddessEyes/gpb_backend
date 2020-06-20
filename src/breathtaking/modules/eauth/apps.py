@@ -1,5 +1,7 @@
+"""Модуль django-app."""
+
 from django.apps import AppConfig
 
 
 class EauthConfig(AppConfig):
-    name = 'eauth'
+    name = 'breathtaking.modules.eauth'
