@@ -19,14 +19,26 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
-    - name: Install project dep
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install pipenv
+      uses: dschep/install-pipenv-action@v1
+      
+    - name: Deps install
       run: |
-        pip install isort flake8 pylint
-
-    # Runs a set of commands using the runners shell
-    - name: Run linting
+        pipenv install --dev
+        
+    - name: flake8
       run: |
-        isort --check
+        pipenv run flake8 --config=.flake8
+        
+    - name: pylint
+      run: |
+        pipenv run pylint src
+        
+    - name: isort
+      run: |
+        pipenv run isort --check
