@@ -12,15 +12,6 @@ class SolutionInline(admin.TabularInline):
     model = Solution
     extra = 0
 
-    def has_add_permission(self, request, obj=None):
-        return False
-
-    def has_delete_permission(self, request, obj=None):
-        return False
-
-    def has_change_permission(self, request, obj=None):
-        return False
-
 
 class IdeaLikeInline(admin.TabularInline):
     """Инлайн админ `Лайки к идее`."""
@@ -28,30 +19,12 @@ class IdeaLikeInline(admin.TabularInline):
     model = IdeaLike
     extra = 0
 
-    def has_add_permission(self, request, obj=None):
-        return False
-
-    def has_delete_permission(self, request, obj=None):
-        return False
-
-    def has_change_permission(self, request, obj=None):
-        return False
-
 
 class IdeaCommentInline(admin.TabularInline):
     """Инлайн админ `Комменты к идее`."""
 
     model = IdeaComment
     extra = 0
-
-    def has_add_permission(self, request, obj=None):
-        return False
-
-    def has_delete_permission(self, request, obj=None):
-        return False
-
-    def has_change_permission(self, request, obj=None):
-        return False
 
 
 @admin.register(IdeaOffer)
