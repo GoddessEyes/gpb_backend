@@ -61,9 +61,11 @@ class IdeaOffer(TimeStampedModel):
         to=Tag,
         verbose_name='Тэги',
     )
-    themes = models.ManyToManyField(
+    themes = models.ForeignKey(
         to=Theme,
         verbose_name='Темы',
+        on_delete=models.CASCADE,
+        null=True,
     )
     status = models.PositiveSmallIntegerField(
         verbose_name='Статус',

@@ -34,6 +34,7 @@ class IdeaOfferAdmin(admin.ModelAdmin):
         'theme',
         'user',
         'status',
+        'themes',
     )
     readonly_fields = (
         'created',
