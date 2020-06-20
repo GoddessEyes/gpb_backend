@@ -6,7 +6,7 @@
 ![You are breathtaking](https://memepedia.ru/wp-content/uploads/2019/06/keanu-meme.jpg)
 
 ```text
-Репозитории: 
+Обратите внимание на репозитории: 
 
   Frontend: https://github.com/Hvoya/gpb-frontend
   Mobile: https://github.com/bigman212/DigitalHackaton_2
