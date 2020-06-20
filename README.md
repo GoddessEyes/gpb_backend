@@ -1,4 +1,5 @@
 ![CI](https://github.com/GoddessEyes/gpb_backend/workflows/CI/badge.svg)
+![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 
 # You are breathtaking !!!
 
