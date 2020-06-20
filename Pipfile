@@ -21,6 +21,7 @@ django-filter = "==2.2.0"
 django-rest-auth = "*"
 django-allauth = "*"
 django-mptt = "*"
+faker = "*"
 
 [requires]
 python_version = "3.8"
