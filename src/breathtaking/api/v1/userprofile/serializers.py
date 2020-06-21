@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from breathtaking.api.v1.auth.serializers import UserSerializer
-from breathtaking.api.v1.ideas.serializers import ThemeSerializer, TagSerializer
+from breathtaking.api.v1.ideas.serializers import TagSerializer, ThemeSerializer
 from breathtaking.api.v1.stats.serializers import StatsSerializer
 from breathtaking.modules.eauth.models import User
 from breathtaking.modules.ideas.models import IdeaOffer
@@ -17,7 +17,6 @@ class UserProfileIdeaOfferSerializer(serializers.ModelSerializer):
         exclude = (
             'user',
         )
-
 
     def get_themes_info(self, instance):
         return ThemeSerializer(instance.themes).data
