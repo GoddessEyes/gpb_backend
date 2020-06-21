@@ -1,8 +1,9 @@
+from rest_framework.response import Response
+
 from breathtaking.api.common.viewsets import ListOnlyModelViewSet
-from breathtaking.api.v1.stats.serializers import StatsSerializer, MainHeaderStats
+from breathtaking.api.v1.stats.serializers import MainHeaderStats, StatsSerializer
 from breathtaking.modules.eauth.models import User
 from breathtaking.modules.ideas.models import IdeaOffer
-from rest_framework.response import Response
 
 
 class StatisticViewSet(ListOnlyModelViewSet):
