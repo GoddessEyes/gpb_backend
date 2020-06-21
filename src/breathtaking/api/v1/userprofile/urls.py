@@ -7,4 +7,4 @@ from breathtaking.api.v1.userprofile.views import UserProfileViewSet
 
 router = routers.DefaultRouter()
 
-router.register('userprfile', UserProfileViewSet)
+router.register('userprofile', UserProfileViewSet)
