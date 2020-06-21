@@ -1,4 +1,5 @@
-from breathtaking.api.common.viewsets import CreateDestroyViewSet
+
+from breathtaking.api.common.viewsets import ListCreateDestroyViewSet
 from breathtaking.api.v1.solutions.serializers import (
     SolutionWithIdeaSerializer,
     SolutionWithoutIdeaSerializer,
@@ -6,7 +7,7 @@ from breathtaking.api.v1.solutions.serializers import (
 from breathtaking.modules.solutions.models import Solution
 
 
-class SolutionWithoutIdeaViewSet(CreateDestroyViewSet):
+class SolutionWithoutIdeaViewSet(ListCreateDestroyViewSet):
     """Бизнес решение без привязки к идее.
     Тэги выбираются самостоятельно.
     """
@@ -14,7 +15,7 @@ class SolutionWithoutIdeaViewSet(CreateDestroyViewSet):
     queryset = Solution.objects.all()
 
 
-class SolutionWithIdeaViewSet(CreateDestroyViewSet):
+class SolutionWithIdeaViewSet(ListCreateDestroyViewSet):
     """Бизнес решение с привязкой к идее.
     Тэги выбираются автоматически из идеи.
     """

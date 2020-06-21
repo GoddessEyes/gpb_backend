@@ -30,7 +30,6 @@ class UserInfoSerializer(UserSerializer):
     ideas = serializers.SerializerMethodField()
     solutions = serializers.SerializerMethodField()
 
-
     class Meta:
         model = User
         fields = (
