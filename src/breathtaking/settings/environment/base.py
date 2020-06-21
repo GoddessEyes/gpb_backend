@@ -4,6 +4,7 @@
 
 import os
 
+from breathtaking.settings.components.active_directory import *
 from breathtaking.settings.components.common import *
 from breathtaking.settings.components.db import *
 from breathtaking.settings.components.openapi import *
@@ -30,6 +31,7 @@ MIDDLEWARE = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.contrib.auth.middleware.RemoteUserMiddleware',
 )
 
 ROOT_URLCONF = 'breathtaking.urls'

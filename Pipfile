@@ -23,6 +23,8 @@ django-allauth = "*"
 django-mptt = "*"
 faker = "*"
 django-ckeditor = "*"
+django-auth-ldap = "*"
+django-remote-auth-ldap = "*"
 
 [requires]
 python_version = "3.8"

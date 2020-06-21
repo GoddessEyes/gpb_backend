@@ -13,6 +13,17 @@
   Design: https://xd.adobe.com/view/59ebe566-5d60-4d4b-4245-8f1300911a0c-2fda/
 ```
 
+|       Ключ        |     Значение     |  
+|-------------------|------------------|
+|`AUTH_LDAP_SERVER_URI`| Сервер LDAP |
+|`AUTH_LDAP_BIND_DN`| ??? |
+|`AUTH_LDAP_BIND_PASSWORD`| ??? | 
+|`AUTH_LDAP_GROUP_SEARCH`| ??? | 
+|`AUTH_LDAP_GROUP_TYPE`| ??? |
+|`AUTH_LDAP_REQUIRE_GROUP`| ??? |
+|`AUTH_LDAP_DENY_GROUP`| ??? |
+
+
 ```text
 Сервис является базовой реализацией системы публикации идей.
 Модули:
