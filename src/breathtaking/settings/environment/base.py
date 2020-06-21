@@ -4,7 +4,6 @@
 
 import os
 
-# from breathtaking.settings.components.active_directory import *
 from breathtaking.settings.components.common import *
 from breathtaking.settings.components.db import *
 from breathtaking.settings.components.openapi import *
