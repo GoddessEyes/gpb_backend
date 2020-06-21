@@ -1,3 +1,6 @@
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from breathtaking.api.common.viewsets import ListCreateDestroyViewSet, ListOnlyModelViewSet
 from breathtaking.api.v1.solutions.serializers import (
@@ -24,8 +27,32 @@ class SolutionWithIdeaViewSet(ListCreateDestroyViewSet):
     queryset = Solution.objects.all()
 
 
-class SolutionViewSet(ListOnlyModelViewSet):
-    """Все Бизнес решения.
-    """
+class SolutionViewSet(ReadOnlyModelViewSet):
+    """Все Бизнес решения."""
     serializer_class = SolutionSerializer
     queryset = Solution.objects.all()
+
+    filter_backends = (
+        SearchFilter,
+        DjangoFilterBackend,
+        OrderingFilter,
+    )
+
+    search_fields = (
+        'short_description',
+        'task',
+        'description',
+        'result',
+        'resources',
+    )
+    filter_fields = (
+        'user',
+        'idea',
+        'tags',
+        'themes',
+    )
+
+    ordering_fields = (
+        'created',
+        'modified',
+    )

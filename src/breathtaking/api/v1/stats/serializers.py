@@ -1,5 +1,22 @@
 from rest_framework import serializers
 
+from breathtaking.modules.ideas.models import IdeaOffer
+
+
+class MainHeaderStats(serializers.Serializer):
+    open_ideas = serializers.SerializerMethodField()
+    closed_ideas = serializers.SerializerMethodField()
+
+    def get_open_ideas(self, instance):
+        return IdeaOffer.objects.filter(
+            status=0
+        ).count()
+
+    def get_closed_ideas(self, instance):
+        return IdeaOffer.objects.filter(
+            status=3
+        ).count()
+
 
 class StatsSerializer(serializers.Serializer):
     """Сериализатор статистики пользователя."""
@@ -23,4 +40,4 @@ class StatsSerializer(serializers.Serializer):
         return instance.ideacomment_set.count()
 
     def get_votes(self, instance):
-        return 3
+        return instance.ideacomment_set.count()
